@@ -53,7 +53,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a asp-controller="Home" asp-action="Privacy" class="nav-link @Url.MakeActiveClass("Home","Privacy")">
+                    <a asp-controller="Home" asp-action="Privacy" class="nav-link @Url.MakeActiveClass("Home", "Privacy")">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Privacy
@@ -61,24 +61,26 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a asp-controller="Kullanici" asp-action="Index" class="nav-link @Url.MakeActiveClass("Kullanici","Index")">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Kullanıcı Yönetimi
-                        </p>
-                    </a>
-                </li>
+                @if (User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value == "Admin")
+                {
+                            <li class="nav-item">
+                                <a asp-controller="Kullanici" asp-action="Index" class="nav-link @Url.MakeActiveClass("Kullanici", "Index")">
+                                    <i class="nav-icon far fa-image"></i>
+                                    <p>
+                                        Kullanıcı Yönetimi
+                                    </p>
+                                </a>
+                            </li>
 
-                <li class="nav-item">
-                    <a asp-controller="Rol" asp-action="Index" class="nav-link @Url.MakeActiveClass("Rol","Index")">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Rol Yönetimi
-                        </p>
-                    </a>
-                </li>
-
+                            <li class="nav-item">
+                                <a asp-controller="Rol" asp-action="Index" class="nav-link @Url.MakeActiveClass("Rol", "Index")">
+                                    <i class="nav-icon far fa-image"></i>
+                                    <p>
+                                        Rol Yönetimi
+                                    </p>
+                                </a>
+                            </li>
+                  }
 
 
             </ul>

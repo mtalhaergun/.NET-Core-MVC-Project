@@ -26,11 +26,11 @@ namespace WebApp_Proje.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string Eposta, string Şifre)
+        public async Task<IActionResult> Login(string Eposta, string Sifre)
         {
             ClaimsIdentity kimlik = null;
             bool kimlikDoğrulandıMı = false;
-            var kullanıcı = await _context.Kullanicilar.Include(k => k.Rol).FirstOrDefaultAsync(m => m.Eposta == Eposta && m.Sifre == Şifre);
+            var kullanıcı = await _context.Kullanicilar.Include(k => k.Rol).FirstOrDefaultAsync(m => m.Eposta == Eposta && m.Sifre == Sifre);
             if (kullanıcı == null)
             {
                 return NotFound();
@@ -59,7 +59,7 @@ namespace WebApp_Proje.Controllers
         public IActionResult Logout()
         {
             var giriş = HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return Redirect("~/Giriş");
+            return Redirect("~/Giris");
         }
     }
 }

@@ -27,10 +27,10 @@ namespace WebApp_Proje.Controllers
         {
             if (ModelState.IsValid)
             {
-                kullanıcı.RolId = 1;
+                kullanıcı.RolId = 2;
                 _context.Add(kullanıcı);
                 await _context.SaveChangesAsync();
-                return Redirect("Giriş");
+                return Redirect("Giris");
             }
             return View(kullanıcı);
         }

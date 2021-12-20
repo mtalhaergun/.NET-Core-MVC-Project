@@ -38,9 +38,9 @@ namespace WebApp_Proje
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
-                options.LoginPath = "/Giriþ";
-                options.AccessDeniedPath = "/Giriþ";
-                options.LogoutPath = "/Giriþ";
+                options.LoginPath = "/Giris";
+                options.AccessDeniedPath = "/Giris";
+                options.LogoutPath = "/Giris";
             });
         }
 

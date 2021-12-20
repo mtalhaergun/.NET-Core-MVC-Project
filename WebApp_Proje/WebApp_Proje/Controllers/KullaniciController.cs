@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using WebApp_Proje.Models;
 
 namespace WebApp_Proje.Controllers
 {
+    
     public class KullaniciController : Controller
     {
         private readonly WebApp_ProjeDbContext _context;

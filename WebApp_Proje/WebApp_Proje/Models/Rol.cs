@@ -12,7 +12,7 @@ namespace WebApp_Proje.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RolId { get; set; }
 
-        [Required, StringLength(30, MinimumLength = 1, ErrorMessage ="1 ila 30 karakterlik bir rol girmelisiniz."), Display(Name ="Rol Adı")]
+        [Required, StringLength(30, MinimumLength = 1, ErrorMessage ="1 ila 30 karakterlik bir rol girmelisiniz."), Display(Name ="Rol Adi")]
         public string RolAdi { get; set; }
     }
 }

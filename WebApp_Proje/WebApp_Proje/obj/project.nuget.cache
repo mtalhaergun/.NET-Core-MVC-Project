@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pauZuFpln51XPX8ktWGJxwc3G2jUBQRDTySpnRpq9/5GH0ewIr+VvTlPtaf8UFW6s8P1hVCS9HUR0lOl5AhhRg==",
+  "dgSpecHash": "mRGf7ZE9sn4hXIf/NC6n/0dE6Li+ZReZdMIGZkxGHc8bTOkYjZ6e3JjvwtOY0QfOyh/0dsEkvYz0Lbf5R1GFEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\talha\\source\\repos\\WebApp_Proje\\WebApp_Proje\\WebApp_Proje.csproj",
+  "projectFilePath": "C:\\Users\\talha\\Documents\\GitHub\\E-Ticaret-Web\\WebApp_Proje\\WebApp_Proje\\WebApp_Proje.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\talha\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
