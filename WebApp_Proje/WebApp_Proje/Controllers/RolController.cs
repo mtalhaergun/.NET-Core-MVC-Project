@@ -11,7 +11,7 @@ using WebApp_Proje.Models;
 
 namespace WebApp_Proje.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class RolController : Controller
     {
         private readonly WebApp_ProjeDbContext _context;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebApp_Proje.Data;
+using WebApp_Proje.Models;
 
 namespace WebApp_Proje.Controllers
 {
@@ -20,46 +21,34 @@ namespace WebApp_Proje.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Login(string Eposta, string Sifre)
+        public async Task<IActionResult> Login(Kullanici k)
         {
-            ClaimsIdentity kimlik = null;
-            bool kimlikDoğrulandıMı = false;
-            var kullanıcı = await _context.Kullanicilar.Include(k => k.Rol).FirstOrDefaultAsync(m => m.Eposta == Eposta && m.Sifre == Sifre);
-            if (kullanıcı == null)
+            var bilgiler = _context.Kullanicilar.FirstOrDefault(x => x.Eposta == k.Eposta && x.Sifre == k.Sifre);
+            if(bilgiler != null)
             {
-                return NotFound();
-            }
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, k.Eposta)
+                };
 
-            kimlik = new ClaimsIdentity
-                (new[]
-                        {
-                            new Claim(ClaimTypes.Sid,kullanıcı.KullaniciId.ToString()),
-                            new Claim(ClaimTypes.Email,kullanıcı.Eposta),
-                            new Claim(ClaimTypes.Role,kullanıcı.Rol.RolAdi)
-                        }, CookieAuthenticationDefaults.AuthenticationScheme
-                );
-            kimlikDoğrulandıMı = true;
-
-            if (kimlikDoğrulandıMı)
-            {
-                var ilkeler = new ClaimsPrincipal(kimlik);
-                var giriş = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, ilkeler);
-                return Redirect("~/Home");
+                var useridentity = new ClaimsIdentity(claims, "Login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
+                await HttpContext.SignInAsync(principal);
+                return RedirectToAction("Index", "Home");
             }
             return View();
-
         }
         [HttpGet]
         public IActionResult Logout()
         {
             var giriş = HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return Redirect("~/Giris");
+            return Redirect("~/Giriş");
         }
     }
 }

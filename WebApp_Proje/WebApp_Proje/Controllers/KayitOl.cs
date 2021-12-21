@@ -27,7 +27,7 @@ namespace WebApp_Proje.Controllers
         {
             if (ModelState.IsValid)
             {
-                kullanıcı.RolId = 2;
+                kullanıcı.RolId = 1;
                 _context.Add(kullanıcı);
                 await _context.SaveChangesAsync();
                 return Redirect("Giris");
