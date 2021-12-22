@@ -319,12 +319,6 @@ C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debu
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Create.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Delete.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Details.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Edit.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Index.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\Urunler\Urun.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WebApp_Proje\WebApp_Proje\obj\Debug\net5.0\WebApp_Proje.RazorTargetAssemblyInfo.cache

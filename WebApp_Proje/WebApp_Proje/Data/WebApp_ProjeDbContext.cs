@@ -16,7 +16,8 @@ namespace WebApp_Proje.Data
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Rol> Roller { get; set; }
-        public DbSet<Urunler> Urunler { get; set; }
+        
+       
 
        
     }
