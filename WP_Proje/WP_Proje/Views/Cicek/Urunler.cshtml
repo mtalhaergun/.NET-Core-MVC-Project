@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WP_Proje.Models.Cicek>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html lang="en">
+
+            @foreach (var item in Model)
+            {
+                <head>
+                    <title>Harvest vase</title>
+                    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+                    <link rel="stylesheet" href="~/css/Urunler.css">
+                </head>
+
+                <body>
+                    <div class="wrapper" style="margin-left:4%; margin-right:1%">
+                        <div class="product-img">
+                            <img src="http://bit.ly/2tMBBTd" height="420" width="327">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-text">
+                                <h1>@Html.DisplayFor(modelItem => item.Isim)</h1>
+                                <h2>Stok: @Html.DisplayFor(modelItem => item.Stok)</h2>
+                                <p>@Html.DisplayFor(modelItem => item.Bilgi)</p>
+                            </div>
+                            <div class="product-price-btn">
+                                <p><span>@Html.DisplayFor(modelItem => item.Fiyat)</span>₺</p>
+                                <button type="button">buy now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </body>
+            
+
+
+
+            }
+
+</html>
