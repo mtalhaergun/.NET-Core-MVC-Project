@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +18,13 @@ namespace WP_Proje.Controllers
     public class CicekController : Controller
     {
         private readonly SiteDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
+        private object webHostEnvironment;
 
-        public CicekController(SiteDbContext context)
+        public CicekController(SiteDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         // GET: Cicek
@@ -66,10 +72,21 @@ namespace WP_Proje.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CicekId,Isim,Bilgi,Fiyat,Stok,Resim,KategoriId")] Cicek cicek)
+        public async Task<IActionResult> Create([Bind("CicekId,Isim,Bilgi,Fiyat,Stok,Resim,KategoriId,ImageFile")] Cicek cicek)
         {
             if (ModelState.IsValid)
             {
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+
+                string fileName = Path.GetFileNameWithoutExtension(cicek.ImageFile.FileName);
+                string extension = Path.GetExtension(cicek.ImageFile.FileName);
+                cicek.Resim = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/images", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await cicek.ImageFile.CopyToAsync(fileStream);
+                }
+
                 _context.Add(cicek);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

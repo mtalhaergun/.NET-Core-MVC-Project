@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Stok)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Resim)
+                <img src="~/images/@Url.Content(item.Resim)" style="width:250px; height:200px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)

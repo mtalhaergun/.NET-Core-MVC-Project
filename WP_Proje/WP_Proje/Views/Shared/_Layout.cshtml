@@ -21,11 +21,15 @@
     <!-- Style -->
     <link rel="stylesheet" href="~/Bootstrap/css/style.css">
 
-    <title>Website Menu #10</title>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-    <header class="site-navbar site-navbar-target bg-white" role="banner">
+    
+
+
+
+
+
+    <header class="site-navbar site-navbar-target bg-white" role="banner" style="position:fixed; top:0">
 
         <div class="container">
             <div class="row align-items-center position-relative">
@@ -33,23 +37,23 @@
                 <div class="col-lg-4">
                     <nav class="site-navigation text-right ml-auto " role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                            <li class="active"><a href="~/Home/Index" class="nav-link">Home</a></li>
+                            <li class="active"><a href="~/Home/Index" class="nav-link">Ana Sayfa</a></li>
                             <li><a href="~/Cicek/Urunler" class="nav-link">Ürünler</a></li>
                             @if (User.Identity.IsAuthenticated)
                             {
                                 if (User.IsInRole("Admin"))
                                 {
-                                    <li><a href="~/Cicek/Index" class="nav-link">Yönetim</a></li>
-                                }
-                            }
-                            
+                <li><a href="~/Cicek/Index" class="nav-link">Yönetim</a></li>
+}
+        }
+
 
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="site-logo">
-                        <a href="index.html">Brand</a>
+                        <a href="#">Site Adı</a>
                     </div>
 
 
@@ -58,29 +62,29 @@
                 <div class="col-lg">
                     <nav class="site-navigation text-left mr-auto " role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                            <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
-                            <li><a href="contact.html" class="nav-link">İletişim</a></li>
-                            
-                                @if (SignInManager.IsSignedIn(User))
-                                 {
-                                    <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-                                    </li>
-                                        <li class="nav-item">
-                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-                                            </form>
-                                        </li> }
-                                 else
-                                 {
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                                        </li>
-                                 }
-                                
+
+
+
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                </li>
+                                <li class="nav-item">
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    </form>
+                                </li> }
+                                            else
+                                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Kayıt Ol</a>
+                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a>
+                                                </li>
+}
+
                         </ul>
 
                     </nav>
@@ -91,8 +95,9 @@
         </div>
 
     </header>
-
-    <div class="container col-md-12">
+</head>
+<body>
+    <div class="container col-md-12 pt-5">
         @RenderBody()
     </div>
 
@@ -105,5 +110,14 @@
     <script src="~/Bootstrap/js/jquery.sticky.js"></script>
     <script src="~/Bootstrap/js/main.js"></script>
     @RenderSection("Scripts", required: false)
+
+
+
+    
+
+
+    
+    
+
 </body>
 </html>
