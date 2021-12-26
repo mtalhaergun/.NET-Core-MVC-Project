@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WP_Proje.Data;
 
 namespace WP_Proje.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211224215258_Sepet")]
+    partial class Sepet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -293,7 +295,10 @@ namespace WP_Proje.Migrations
                     b.Property<int?>("CicekId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SepetId")
+                    b.Property<int?>("SepetId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SiparisNo")
                         .HasColumnType("int");
 
                     b.Property<int>("UrunNo")
@@ -387,9 +392,7 @@ namespace WP_Proje.Migrations
 
                     b.HasOne("WP_Proje.Models.Sepet", "Sepet")
                         .WithMany()
-                        .HasForeignKey("SepetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SepetId");
 
                     b.Navigation("Cicek");
 

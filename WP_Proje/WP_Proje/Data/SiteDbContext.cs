@@ -16,6 +16,8 @@ namespace WP_Proje.Data
 
         }
         public DbSet<Kategori> Kategoriler { get; set; }
+        public DbSet<Sepet> Sepet { get; set; }
+        public DbSet<SepetDetay> SepetDetay { get; set; }
         public DbSet<Cicek> Cicekler { get; set; }
     }
 }

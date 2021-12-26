@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WP_Proje.Models.SepetDetay>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SepetId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SepetId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SepetDetayId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SepetDetayId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SepetDetayId">Delete</a>
+            </td>
+        </tr>
+    foreach (var item2 in (List<string>)@ViewBag.urunad)
+    {
+        @item2
+    }
+}
+        
+    </tbody>
+</table>

@@ -29,7 +29,8 @@
                             </div>
                             <div class="product-price-btn">
                                 <p><span>@Html.DisplayFor(modelItem => item.Fiyat)</span>₺</p>
-                                <button type="button">Satın Al</button>
+                                @*<button type="button">Sepete Ekle </button>*@
+                                <a class="btn btn-info" asp-controller="SepetDetay" asp-action="Index" asp-route-urunId="@item.CicekId" asp-route-sepetId="@ViewBag.sepetId">Sepete Ekle</a> |
                             </div>
                         </div>
                     </div>

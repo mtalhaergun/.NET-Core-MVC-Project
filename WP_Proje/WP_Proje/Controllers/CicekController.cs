@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,11 +21,13 @@ namespace WP_Proje.Controllers
     {
         private readonly SiteDbContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private object webHostEnvironment;
 
-        public CicekController(SiteDbContext context, IWebHostEnvironment hostEnvironment)
+        public CicekController(SiteDbContext context, IWebHostEnvironment hostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
             this._hostEnvironment = hostEnvironment;
         }
 
@@ -37,6 +41,8 @@ namespace WP_Proje.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Urunler()
         {
+             var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.sepetId = _context.Sepet.Where(x => x.KullaniciId == userId).Select(y => y.SepetId).FirstOrDefault();
             var siteDbContext = _context.Cicekler.Include(c => c.Kategori);
             return View(await siteDbContext.ToListAsync());
         }
