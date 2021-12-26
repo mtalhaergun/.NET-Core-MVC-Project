@@ -17,5 +17,11 @@ namespace WP_Proje.Models
         [ForeignKey("UrunNo")]
         public int UrunNo { get; set; }
         public virtual Cicek Cicek { get; set; }
+
+        public string Isim { get; set; }
+        public string Bilgi { get; set; }
+        public int Fiyat { get; set; }
+        public int Stok { get; set; }
+        public string Resim { get; set; }
     }
 }

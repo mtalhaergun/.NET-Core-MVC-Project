@@ -6,61 +6,66 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Isim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bilgi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fiyat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stok)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Resim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kategori)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Isim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bilgi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fiyat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stok)
-            </td>
-            <td>
-                <img src="~/images/@Url.Content(item.Resim)" style="width:250px; height:200px" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CicekId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CicekId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CicekId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table" style="margin-top:50px">
+        <thead>
+            <a class="btn btn-info" asp-action="Create">Yeni Ürün Ekle</a>
+            <br />
+            <br />
+            <a class="btn btn-success" asp-controller="Kategori" asp-action="Create">Kategori Ekle</a>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Isim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bilgi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fiyat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stok)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Resim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kategori)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Isim)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bilgi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fiyat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stok)
+                    </td>
+                    <td>
+                        <img src="~/images/@Url.Content(item.Resim)" style="width:250px; height:200px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
+                    </td>
+                    <td>
+                        <a class="button btn-success" asp-action="Edit" asp-route-id="@item.CicekId">Edit</a>
+                        <a class="button btn-danger" asp-action="Delete" asp-route-id="@item.CicekId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

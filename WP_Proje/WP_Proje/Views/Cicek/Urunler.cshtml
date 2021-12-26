@@ -11,12 +11,12 @@
             @foreach (var item in Model)
             {
                 <head>
-                    <title>Harvest vase</title>
+     
                     <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
                     <link rel="stylesheet" href="~/css/Urunler.css">
                 </head>
 
-                <body>
+                <body style="background-color: #9cebd5">
                     <div class="wrapper" style="margin-left:4%; margin-right:1%; margin-top:15%">
                         <div class="product-img">
                             <img src="~/images/@Url.Content(item.Resim)" height="420" width="327">
@@ -27,10 +27,11 @@
                                 <h2 style="color:deeppink">Stok: @Html.DisplayFor(modelItem => item.Stok)</h2>
                                 <p>@Html.DisplayFor(modelItem => item.Bilgi)</p>
                             </div>
+                            
                             <div class="product-price-btn">
                                 <p><span>@Html.DisplayFor(modelItem => item.Fiyat)</span>₺</p>
                                 @*<button type="button">Sepete Ekle </button>*@
-                                <a class="btn btn-info" asp-controller="SepetDetay" asp-action="Index" asp-route-urunId="@item.CicekId" asp-route-sepetId="@ViewBag.sepetId">Sepete Ekle</a> |
+                            <button type="button"> <a class="btn btn-info"  asp-controller="SepetDetay" asp-action="Index" asp-route-urunId="@item.CicekId" asp-route-sepetId="@ViewBag.sepetId" asp-route-isim="@item.Isim" asp-route-stok="@item.Stok" asp-route-resim="@Url.Content(item.Resim)">Sepete Ekle</a></button>
                             </div>
                         </div>
                     </div>

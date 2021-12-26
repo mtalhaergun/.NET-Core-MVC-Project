@@ -394,7 +394,6 @@ C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Cicek\Edit.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Cicek\Index.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Cicek\Urunler.cshtml.g.cs
-C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Kategori\Create.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Kategori\Delete.cshtml.g.cs
@@ -426,3 +425,4 @@ C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\SepetDetay\Edit.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\SepetDetay\Index.cshtml.g.cs
 C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\WP_Proje.csproj.AssemblyReference.cache
+C:\Users\talha\Documents\GitHub\E-Ticaret-Web\WP_Proje\WP_Proje\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs

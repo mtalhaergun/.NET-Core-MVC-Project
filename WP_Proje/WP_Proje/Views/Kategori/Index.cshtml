@@ -6,9 +6,9 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
+<div class="container">
+<p style="margin-top: 50px;">
+    <a class="btn btn-success" asp-action="Create">Kategori Ekle</a>
 </p>
 <table class="table">
     <thead>
@@ -27,11 +27,11 @@
                 @Html.ValidationMessageFor(modelItem => item.KategoriAdi,"", new { @style = "color:red"})
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.KategoriId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.KategoriId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.KategoriId">Delete</a>
+                <a class="button btn-info" asp-action="Edit" asp-route-id="@item.KategoriId">Düzenle</a> 
+                <a class="button btn-danger" asp-action="Delete" asp-route-id="@item.KategoriId">Sil</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+    </div>

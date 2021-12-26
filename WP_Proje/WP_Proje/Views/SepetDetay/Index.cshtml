@@ -19,6 +19,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.UrunNo)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stok)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -32,15 +42,16 @@
                 @Html.DisplayFor(modelItem => item.UrunNo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.SepetDetayId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SepetDetayId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SepetDetayId">Delete</a>
+                @Html.DisplayFor(modelItem => item.Isim)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stok)
+            </td>
+            <td>
+                <img src="~/images/@Url.Content(item.Resim)" height="300" width="270">
+            </td>
+  
         </tr>
-    foreach (var item2 in (List<string>)@ViewBag.urunad)
-    {
-        @item2
-    }
 }
         
     </tbody>

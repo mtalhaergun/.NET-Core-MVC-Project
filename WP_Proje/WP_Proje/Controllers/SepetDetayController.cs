@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,19 +21,19 @@ namespace WP_Proje.Controllers
         }
 
         // GET: SepetDetay
-        public async Task<IActionResult> Index(int urunId,int sepetId)
+        public async Task<IActionResult> Index(int urunId,int sepetId,string isim,int stok,string resim)
         {
-            var sepetdetay = new SepetDetay { SepetId = sepetId, UrunNo = urunId };
+            var sepetdetay = new SepetDetay { SepetId = sepetId, UrunNo = urunId, Isim = isim, Stok = stok, Resim = resim };
             _context.SepetDetay.Add(sepetdetay);
             _context.SaveChanges();
-             var urunler  =  _context.SepetDetay.Where(x=>x.SepetId== sepetId).Select(y => y.UrunNo).ToList();
-            List<string> list = new();
-            foreach (var item in urunler)
-            {
-                var urunAd = _context.Cicekler.Where(x => x.CicekId == item).Select(y => y.Isim).FirstOrDefault();
-                list.Add(urunAd);
-            }
-            ViewBag.urunad = list; 
+            //var urunler = _context.SepetDetay.Where(x => x.SepetId == sepetId).Select(y => y.UrunNo).ToList();
+            //List<string> list = new();
+            //foreach (var item in urunler)
+            //{
+            //    var urunAd = _context.Cicekler.Where(x => x.CicekId == item).Select(y => y.Isim).FirstOrDefault();
+            //    list.Add(urunAd);
+            //}
+            //ViewBag.urunad = list;
             var Sepet = await _context.SepetDetay.Where(x => x.SepetId == sepetId).ToListAsync();
             return View(Sepet);
         }

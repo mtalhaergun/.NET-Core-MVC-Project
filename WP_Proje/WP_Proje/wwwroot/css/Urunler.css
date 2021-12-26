@@ -6,7 +6,7 @@
 * Chronicle Display Roman font was substituted for similar fonts from Google Fonts.
 */
 
-body {
+bodyurunler {
     background-color: #fdf1ec;
 }
 
@@ -120,8 +120,8 @@ span {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #ffffff;
-    background-color: #9cebd5;
-    cursor: pointer;
+    background-color: #17a2b8;
+   
     outline: none;
 }
 
